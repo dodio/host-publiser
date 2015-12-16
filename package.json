@@ -1,0 +1,45 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "a web framework",
+  "main": "start.js",
+  "scripts": {
+    "dev": "SET FA_ENV=dev&SET NODE_DEBUG=fa/dispatcher,fa/require,fa/middleware,fa/createServer,fa/log&node start",
+    "test": "SET FA_ENV=test&SET NODE_DEBUG=fa/dispatcher,fa/require,fa/middleware,fa/createServer,fa/log&SET FA_DEBUG=true&node start",
+    "start": "SET FA_ENV=prod&node start"
+  },
+  "author": "dodio",
+  "license": "ISC",
+  "dependencies": {
+    "async": "^1.5.0",
+    "bluebird": "^3.0.2",
+    "body-parser": "^1.14.1",
+    "colors": "^1.1.2",
+    "compressible": "^2.0.6",
+    "compression": "^1.6.0",
+    "connect-redis": "^3.0.1",
+    "cookie-parser": "^1.4.0",
+    "debuglog": "^1.0.1",
+    "express": "^4.13.3",
+    "express-session": "^1.12.1",
+    "lodash": "^3.10.1",
+    "md5": "^2.0.0",
+    "method-override": "^2.3.5",
+    "node-ral": "^0.1.3",
+    "redis": "^2.3.0",
+    "response-time": "^2.3.1",
+    "serve-favicon": "^2.3.0",
+    "yog-bigpipe": "^0.2.0",
+    "yog-log": "0.0.20",
+    "yog-swig": "^0.2.4",
+    "yog-view": "^0.3.0"
+  },
+  "devDependencies": {
+    "fis-parser-less": "^0.1.3",
+    "fis3": "^3.2.4",
+    "fis3-deploy-replace": "^1.0.2",
+    "fis3-hook-cmd": "^0.1.2",
+    "session-file-store": "0.0.22",
+    "fis3-postpackager-loader": "^1.3.5"
+  }
+}

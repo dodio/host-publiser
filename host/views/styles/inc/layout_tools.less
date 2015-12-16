@@ -1,0 +1,308 @@
+/* @file layout_tools.less
+@author 徐远志
+@date 2013-10-15
+@description 将基础的css 原子类定义在这里，命名为布局工具。或者叫做布局调整工具。
+比如清除浮动，清除边距，边框等等单一的css属性调整放于此。 */
+
+// less  类函数
+// 阴影
+.shadow(@x: 0;
+@y: 0;
+@blur: 2px;
+@c:rgba(0, 0, 0, 0.3)) {
+    -webkit-box-shadow: @arguments;
+    -moz-box-shadow: @arguments;
+    box-shadow: @arguments;
+}
+
+/* 布局工具 */
+// 边距处理
+.mid {
+    margin: 0 auto;
+}
+.mt0 {
+    margin-top: 0 !important;
+}
+.mb0 {
+    margin-bottom: 0 !important;
+}
+.ml0 {
+    margin-left: 0 !important;
+}
+.mr0 {
+    margin-right: 0 !important;
+}
+.m0 {
+    margin: 0 !important;
+}
+.mt5 {
+    margin-top: 5px;
+}
+.ml5 {
+    margin-left: 5px;
+}
+.mr5 {
+    margin-right: 5px;
+}
+.mb5 {
+    margin-bottom: 5px;
+}
+.mt10 {
+    margin-top: 10px;
+}
+.ml10 {
+    margin-left: 10px;
+}
+.mr10 {
+    margin-right: 10px;
+}
+.mb10 {
+    margin-bottom: 10px;
+}
+.mt15 {
+    margin-top: 15px;
+}
+.ml15 {
+    margin-left: 15px;
+}
+.mr15 {
+    margin-right: 15px;
+}
+.mb15 {
+    margin-bottom: 15px;
+}
+.mt18 {
+    margin-top: 18px;
+}
+.ml18 {
+    margin-left: 18px;
+}
+.mr18 {
+    margin-right: 18px;
+}
+.mb18 {
+    margin-bottom: 18px;
+}
+.mt20 {
+    margin-top: 20px;
+}
+.ml20 {
+    margin-left: 20px;
+}
+.mr20 {
+    margin-right: 20px;
+}
+.mb20 {
+    margin-bottom: 20px;
+}
+.mt30 {
+    margin-top: 30px;
+}
+.pdl0 {
+    padding-left: 0 !important;
+}
+.pdr0 {
+    padding-right: 0 !important;
+}
+.pdt0 {
+    padding-top: 0 !important;
+}
+.pdb0 {
+    padding-bottom: 0 !important;
+}
+.p0 {
+    padding: 0 !important;
+}
+.pdt5 {
+    padding-top: 5px;
+}
+.pdl5 {
+    padding-left: 5px;
+}
+.pdr5 {
+    padding-right: 5px;
+}
+.pdb5 {
+    padding-bottom: 5px;
+}
+.pdt10 {
+    padding-top: 10px;
+}
+.pdl10 {
+    padding-left: 10px;
+}
+.pdr10 {
+    padding-right: 10px;
+}
+.pdb10 {
+    padding-bottom: 10px;
+}
+.pdt15 {
+    padding-top: 15px;
+}
+.pdl15 {
+    padding-left: 15px;
+}
+.pdr15 {
+    padding-right: 15px;
+}
+.pdb15 {
+    padding-bottom: 15px;
+}
+.pdt20 {
+    padding-top: 20px;
+}
+.pdl20 {
+    padding-left: 20px;
+}
+.pdr20 {
+    padding-right: 20px;
+}
+.pdb20 {
+    padding-bottom: 20px;
+}
+// 边框
+.bdrn {
+    border-right: none !important;
+}
+.bdln {
+    border-left: none !important;
+}
+.bdtn {
+    border-top: none !important;
+}
+.bdbn {
+    border-bottom: none !important;
+}
+.bdn {
+    border: none !important;
+}
+// 文字大小
+.fz12 {
+    font-size: 12px;
+}
+.fz13 {
+    font-size: 13px;
+}
+.fz14 {
+    font-size: 14px;
+}
+.fz16 {
+    font-size: 16px;
+}
+.fz20 {
+    font-size: 20px;
+}
+.fz18 {
+    font-size: 18px;
+}
+.fwb {
+    font-weight: bold;
+}
+.fwn {
+    font-weight: normal;
+}
+.tac {
+    text-align: center;
+}
+.tal {
+    text-align: left;
+}
+.tar {
+    text-align: right;
+}
+// 字体
+.ffmsyh {
+    font-family: "微软雅黑";
+}
+// 显示
+.hidden {
+    visibility: hidden;
+}
+.none {
+    display: none;
+}
+.block {
+    display: block;
+}
+.dib {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+}
+// 宽度
+.w {
+    width: 100%;
+}
+.w940 {
+    width: 940px;
+}
+.w942 {
+    width: 942px;
+}
+// 高度
+.h {
+    height: 100%;
+}
+.h100 {
+    height: 100px;
+}
+.h200 {
+    height: 200px;
+}
+.h300 {
+    height: 300px;
+}
+.h500 {
+    height: 500px;
+}
+.h3000 {
+    height: 3000px;
+}
+//正方形大小
+.s50 {
+    width: 50px;
+    height: 50px;
+}
+.s32 {
+    width: 32px;
+    height: 32px;
+}
+// 浮动处理
+.fl {
+    float: left;
+    *display: inline;
+}
+.fr {
+    float: right;
+    *display: inline;
+}
+.clr {
+    clear: both;
+}
+.global-shadow {
+    .shadow();
+}
+.group:after {
+    height: 0;
+    display: block;
+    clear: both;
+    content: ".";
+    visibility: hidden;
+}
+* html .group {
+    height: 1%;
+}
+*:first-child+html .group {
+    min-height: 1px;
+}
+.trans {
+    .trans();
+}
+.disable {
+    filter: grayscale(100%);
+    -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    -ms-filter: grayscale(100%);
+    -o-filter: grayscale(100%)
+}

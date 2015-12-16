@@ -1,0 +1,134 @@
+/*
+@file funclib.less
+@author 
+@date 2013-10-13
+@description 定义一些常用的less 函数
+*/
+
+.opac(@o:0.8){
+	opacity: @o;
+	filter:e("progid:DXImageTransform.Microsoft.Alpha(Opacity=")(@o * 100)e(")\9");
+	filter:none\9\0;
+}
+.bds(@c:#e4e4e4){
+	border: 1px solid @c;
+}
+
+.bdbd(@c:#e4e4e4){
+	border-bottom: 1px dashed @c;
+}
+.bdbs(@c:#e4e4e4){
+	border-bottom: 1px solid @c;
+}
+
+.bdrs(@r:4px){
+	-webkit-border-radius: @r;
+	-moz-border-radius: @r;
+	border-radius: @r;
+}
+
+.ui-abtn(@w;@h;@x1;@y1;@x2;@y2){
+	width: @w;
+	height: @h;
+	.ui-abtn-icon{
+		.bg(@x1,@y1);
+	}
+	&:hover{
+		.ui-abtn-icon{
+			background-position: @x2 @y2;
+		}
+	}
+}
+
+.fade(@t:500ms){
+	-webkit-transition: opacity @t;
+	-moz-transition: opacity @t;
+	-ms-transition: opacity @t;
+	-o-transition: opacity @t;
+	transition: opacity @t;
+}
+.trans(@t:500ms){
+	-webkit-transition: all @t;
+	-moz-transition: all @t;
+	-ms-transition: all @t;
+	-o-transition: all @t;
+	transition: all @t;
+}
+// 免得报错，具体图片在具体less 里定义
+@bg:'';
+@bgie:'';
+.bg(@x:0,@y:0){
+	background:url(@bg) @x @y no-repeat;
+	_background:url(@bgie) @x @y no-repeat;
+}
+
+.fl(){
+	float: left;
+	*display: inline;
+}
+.fr(){
+	float: right;
+	*display: inline;
+}
+.whole(){
+	width: 100%;
+	height: 100%;
+}
+.ui-icon(@w,@h,@x,@y){
+	width: @w;
+	height: @h;
+	.bg(@x,@y);
+}
+
+.btp(@h:24px){
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: @h;
+}
+
+.imgwraper(@w,@h){
+	width: @w;
+	height: @h;
+	img{
+		width: 100%;
+		height: 100%;
+	}
+}
+
+.ffyh{
+	font-family: "微软雅黑";
+}
+.vm(@h){
+	height: @h;
+	line-height: @h;
+}
+.lines(@lh,@l){
+	height:@lh * @l;
+	line-height: @lh;
+	overflow: hidden; 
+}
+.max_lines(@lh,@l){
+	max-height:@lh * @l;
+	line-height: @lh;
+	overflow: hidden;
+}
+
+.abmid_hr(@w){
+	left: 50%;
+	margin-left: -(@w / 2);
+}
+.abmid_v(@h){
+	top: 50%;
+	margin-top: -(@h / 2);
+}
+.abmid(@w,@h){
+	.abmid_hr(@w);
+	.abmid_v(@h);
+}
+.midtext(@w,@h){
+    text-align: center;
+    width: @w;
+    .vm(@h);
+}

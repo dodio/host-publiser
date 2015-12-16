@@ -1,0 +1,1 @@
+module.exports = __RESOURCE_MAP__;
