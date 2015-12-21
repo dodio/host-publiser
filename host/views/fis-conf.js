@@ -87,10 +87,11 @@ prod.match("/js/config.js",{
 })
 
 
-// 产品发布到 domain + 目录下
+// 产品发布到 domain + 目录+发布日期下
+var pubdateDir = makeDate() + "/";
 prod.match("!mapJson.js",{
 	domain : projectInfo.staticDomain,
-	release : projectInfo.staticDir + "$0"
+	release : projectInfo.staticDir + pubdateDir + "$0"
 })
 
 // 产品模式压缩css
@@ -107,7 +108,7 @@ prod.match("::package",{
 });
 
 prod.match("!(styles)/!(lib/**).less",{
-	packTo:projectInfo.staticDir + "/pkg/aio.css"
+	packTo:projectInfo.staticDir  + pubdateDir + "/pkg/aio.css"
 });
 
 console.log("开始清理结果目录:%s",outputDir);
@@ -144,3 +145,8 @@ function replacer(opt) {
     });
     return r;
 };
+
+function makeDate(){
+  var tmp = new Date();
+  return [tmp.getFullYear(),tmp.getMonth()+1,tmp.getDate()+1,tmp.getHours(),tmp.getMinutes()].join("-");
+}
