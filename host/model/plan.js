@@ -5,7 +5,9 @@ var nodeFile = [data_dir,"nodes.json"].join("/");
 var _ = require("lodash");
 plan.getAll = function() {
 	return fs.readFileAsync(nodeFile)
-		.then(JSON.parse)
+		.then(JSON.parse,function(err){
+			return [];
+		})
 }
 
 plan.resolveFile = function(node){

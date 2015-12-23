@@ -4,6 +4,6 @@ log
 mapJson.build.js
 session
 /fa-core
-/host/data/hosts
+/host/data/hosts/*.txt
 /host/data/nodes.json
 /host/data/nodes.json.bak
