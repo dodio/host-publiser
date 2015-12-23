@@ -3,3 +3,91 @@
 @import "inc/normalize.less";
 @import "inc/reset.less";
 @import "inc/layout_tools.less";
+
+#admin-danlu{
+	@bg-color:#337ab7;
+	@color : #fff;
+	body{
+		font-family: "微软雅黑";
+	}
+	// .btn{
+	// 	min-width: 100px;
+	// }
+	.navbar{
+		background-color: @bg-color;
+		.navbar-toggle{
+			.icon-bar{
+				background-color: #fff;
+			}
+			&:hover,&:focus{
+				background-color: #fff;
+				.icon-bar{
+					background-color: @bg-color;
+				}
+			}
+		}
+		.navbar-right{
+			>li>a{
+				color: @color;
+			}
+		}
+		.navbar-header a{
+			color: @color;
+		}
+		li.open {
+			>a{
+				background-color: @color;
+				color: @bg-color;
+			}
+		}
+		.navbar-right>li{
+			>a:hover{
+				background-color: @color;
+				color: @bg-color;
+			}
+		}
+	}
+	.sidebar{
+		font-size: 14px;
+		padding: 20px;
+	}
+}
+
+@media(min-width: 768px) {
+	@sidebarWidth:300px;
+	#admin-danlu{
+		#page-wrapper {
+			margin: 0;
+			margin-left: @sidebarWidth;
+		}
+		.sidebar{
+			width: @sidebarWidth;
+		}
+	}
+}
+
+#admin-login{
+	background:url("images/wine.jpg") 0 0 no-repeat;
+	background-size: cover;
+	font-family: "微软雅黑";
+	body{
+		background-color: transparent;
+	}
+	.loginPanel{
+		// padding: 20px;
+		background-color: rgba(255, 255, 255, 0.3);
+		border: none;
+		// border-radius: 10px;
+		width: 300px;
+		float: right;
+		margin-top: 40%;
+		margin-right: 20%;
+		.submit{
+			height: 40px;
+			width: 100%;
+			font-weight: bold;
+			font-size: 20px;
+			color: #888;
+		}
+	}
+}

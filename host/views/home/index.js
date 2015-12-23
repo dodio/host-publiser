@@ -1,19 +1,31 @@
 /**
- * 模块  首页的js文件
- * 依赖  user
+ * 模块  
+ * 依赖  xx,xx,xx
  * @return {[type]}             [description]
  */
 define(function(require, exports, module){
 	"use strict";
- 	var user = require("js/user");
- 	var $ = require("jquery");
- 	$(function() {
- 		require("js/zui/js/zui.js");
-		console.log("sdjlfk");
-		console.log(user);
+ 	var sidebar = require("common/sidebar");
+ 	var plan = sidebar.plan;
+ 	if(window.addEventListener){
+ 		window.addEventListener("popstate",function(e){
+ 			var node = e.state.node;
+	 		$("#plan_editor").load("/editForm?pid="+node.id);
+	 	})
+ 	}
+ 	setTimeout(function(){
+ 		plan.bind("nodeSelected",function(e,node){
+		var url = "/?pid="+node.id;
+		if(history.pushState){
+			$("#plan_editor").load("/editForm?pid="+node.id,function(){
+				history.pushState({
+				node:node	 					
+				},node.text,url);
+			});
+		}else{
+			window.location.href=url;
+		}
 	});
-	
-	var header = require("home/common/header");
-	header.render(user.userid);
-});
+ 	},1e3)
 
+});

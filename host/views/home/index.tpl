@@ -1,14 +1,15 @@
-{% extends "home/layout.tpl" %}
-{% block "seo" %}
-	<title>Fa框架demo</title>
-{% endblock %}
+{% extends "common/layout.tpl" %}
+
 {% block "content" %}
-{% require "home/index.less" %}
+{% require "/home/index.less" %}
+<!-- 加载echarts主文件 -->
 {% script %}
 seajs.use("home/index");
+R.config("prePid",{{prePid || 0 }})
 {% endscript %}
-<div class="container">
-	 <h1>Hello FA APP</h1>
+	<div class="container-fluid" id="plan_editor">
+  		{% include "home/edit.tpl" %}
+ 	</div>
 </div>
 
 {% endblock %}
