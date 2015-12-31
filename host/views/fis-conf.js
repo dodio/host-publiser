@@ -13,7 +13,7 @@ var local_dilvery = [fis.plugin('local-deliver', {
 
 fis.match("*",{
 	deploy: local_dilvery,
-  	useHash:true
+  	useHash:false
 });
 
 // 将views下的js视作seajs 模块

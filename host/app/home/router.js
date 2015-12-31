@@ -2,7 +2,6 @@ var plan = Host.model("plan");
 module.exports = function(router) {
 	router.get("/",function(req,res,next){
 		var planId = req.query.pid;
-
 		plan.getWithContent(planId).then(function(plan){
 			res.data("plan",plan);
 			res.data("prePid",planId);
