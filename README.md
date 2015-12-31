@@ -8,4 +8,11 @@ https://github.com/oldj/SwitchHosts
 这个工具提供了本地管理多套host方案的功能，
 以及读取线上host方案的能力。
 
-本工具就是用来配合 SwitchHosts 的在线方案的功能。
+本工具就是用来配合 SwitchHosts 的在线方案的功能，来进行hosts方案的发布.
+
+
+#使用
+clone 本工程到目录
+clone fa-core 到工程目录中（原谅我没有发布到 npm里面）
+然后 npm install
+npm run dev 就可以本地使用了.
