@@ -16,3 +16,4 @@ clone 本工程到目录
 clone fa-core 到工程目录中（原谅我没有发布到 npm里面）
 然后 npm install
 npm run dev 就可以本地使用了.
+至于怎么发布成生产环境产品，可以参考 fa-core 的工程使用方式（我还没写详细步骤）
