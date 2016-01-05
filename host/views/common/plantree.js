@@ -27,7 +27,7 @@ define(function(require, exports, module){
 				}
 				a.treeview({
 					data: nodes,
-					levels:4,
+					levels:10,
 					searchResultColor:"#fff",
 					searchResultBackColor:"#800"
 				});
