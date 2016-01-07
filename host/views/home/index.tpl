@@ -1,7 +1,6 @@
 {% extends "common/layout.tpl" %}
 
 {% block "content" %}
-{% require "/home/index.less" %}
 <!-- 加载echarts主文件 -->
 {% script %}
 seajs.use("home/index");

@@ -8,14 +8,19 @@ var options = {
 	serverName : "Host",
 
 	// 部署时的静态资源在 domain 中的目录 一般以项目域名运行在的域名为准
-	staticDir : "/hosts/", //
-	// 静态资源部署的域名
-	staticDomain : "//asset.danlu.com" ,
+	staticDir : "/static/" + makeDate() + "/", //
+	// 静态资源部署的域名,空为本域
+	staticDomain : "" ,
 	
 	// 在服务器中虚拟主机信息
 	vhost : {
-		domain:"hosts.danlu.com"
+		domain:"hosts.idanlu.com"
 	}
 };
 
 module.exports = options;
+
+function makeDate(){
+  var tmp = new Date();
+  return [tmp.getFullYear(),tmp.getMonth()+1,tmp.getDate()+1,tmp.getHours(),tmp.getMinutes()].join("-");
+}

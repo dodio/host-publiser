@@ -20,6 +20,9 @@ fis.match("*",{
 fis.match("*.js",{ 
   isMod: true
 })
+fis.match("/js/conf/*.js",{
+  isMod:false
+})
 fis.hook('cmd', {
   // "baseUrl" : "views/js"
   paths:{
@@ -60,8 +63,7 @@ fis.match("/styles/{inc,lib}/**.{less,css}",{
 })
 
 // 将编译信息写入前端config.js
-fis.match("/js/config.js",{
-  isMod : false,
+fis.match("/js/conf/info.js",{
 	deploy : replacer([
         {
             from: '__STATIC_DOMAIN__',
@@ -73,7 +75,7 @@ fis.match("/js/config.js",{
     ]).concat(local_dilvery)
 })
 
-prod.match("/js/config.js",{
+prod.match("{/js/conf/info.js,pkg/app.js}",{
 	deploy : replacer([
         {
             from: '__STATIC_DOMAIN__',
@@ -86,12 +88,21 @@ prod.match("/js/config.js",{
     ]).concat(local_dilvery)
 })
 
+console.log([
+        {
+            from: '__STATIC_DOMAIN__',
+            to: projectInfo.staticDomain
+        },
+        {
+            from: '__STATIC_DIR__',
+            to: projectInfo.staticDir
+        }
+    ]);
 
 // 产品发布到 domain + 目录+发布日期下
-var pubdateDir = makeDate() + "/";
 prod.match("!mapJson.js",{
 	domain : projectInfo.staticDomain,
-	release : projectInfo.staticDir + pubdateDir + "$0"
+	release : projectInfo.staticDir  + "$0"
 })
 
 // 产品模式压缩css
@@ -102,14 +113,10 @@ prod.match("*.{less,css}",{
 prod.match("*.js",{
 	optimizer:fis.plugin("uglify-js")
 })
-// 产品打包
-prod.match("::package",{
-	postpackager: fis.plugin('loader')
-});
 
-prod.match("!(styles)/!(lib/**).less",{
-	packTo:projectInfo.staticDir  + pubdateDir + "/pkg/aio.css"
-});
+prod.match("mapJson.js",{
+  optimizer:false
+})
 
 console.log("开始清理结果目录:%s",outputDir);
 clean(outputDir);
@@ -146,7 +153,24 @@ function replacer(opt) {
     return r;
 };
 
-function makeDate(){
-  var tmp = new Date();
-  return [tmp.getFullYear(),tmp.getMonth()+1,tmp.getDate()+1,tmp.getHours(),tmp.getMinutes()].join("-");
-}
+// 产品的合并
+
+console.log(projectInfo);
+
+fis.match('::package', {
+  packager: fis.plugin('map', {
+    useTrack : false, // 是否输出路径信息,默认为 true 
+    'pkg/app.js': [
+      "/js/conf/info.js",
+      '/js/conf/config.js',
+      '/{common,home}/**.js',
+      '/js/cache.js',
+      'bootstrap.js',
+      'metisMenu.js',
+      'sb-admin-2.js',
+      'bootstrap-treeview.js'
+    ]
+  })
+})
+
+

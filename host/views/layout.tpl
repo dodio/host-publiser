@@ -17,7 +17,6 @@
 	<script>
 		// hack for config.js
 		var HEAD_TIME = new Date().getTime();
-		var __RESOURCE_MAP__ = "NO_MAP";
 	</script>
   {% require "/styles/global.less" %}
 {% require "/js/config.js" %}

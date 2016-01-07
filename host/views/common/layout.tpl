@@ -19,7 +19,7 @@
   {% require "/js/sb-admin/sb/css/sb-admin-2.css" %}
   {% require "/js/sb-admin/font-awesome/css/font-awesome.css" %}
   {% require "/styles/global.less" %}
-{% require "/js/config.js" %}
+{% require "/js/conf/config.js" %}
 {% script %}
 	seajs.use("js/sb-admin/sb/js/sb-admin-2.js");
 {% endscript %}
