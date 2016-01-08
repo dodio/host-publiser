@@ -22,7 +22,6 @@ plan.get = function(pid){
 	return this.getAll().then(function(plans){
 		return find(pid,plans);
 	})
-
 }
 
 plan.getWithContent = function(pid){
@@ -89,11 +88,10 @@ plan.add = function(pid){
 		var plan = find(pid,plans);
 		var parent;
 		if(plan){
-			parent = plan.nodes = plans.nodes || [];
+			parent = plan.nodes = plan.nodes || [];
 		}else{
 			parent = plans;
 		}
-		
 		var file = Date.now();
 		var node = {
 			text : "新增方案",
