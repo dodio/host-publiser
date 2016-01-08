@@ -20,6 +20,11 @@ var middleware = [
 	"session",
 	'data'
 ]
+
+rootFa.IS_DEV && middleware.push('liveload');
+// 开发模式开启liveless
+rootFa.IS_DEV && middleware.push("liveless");
+
 middleware.push("static");
 
 middleware = middleware.concat([
