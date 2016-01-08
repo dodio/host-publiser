@@ -21,8 +21,10 @@ define(function(require, exports, module){
 				var a = $(ele);
 				if(prePid){
 					var preNode = find(prePid,nodes);
-					preNode.state = {
-						selected : true
+					if(preNode){
+						preNode.state = {
+							selected : true
+						}
 					}
 				}
 				a.treeview({
